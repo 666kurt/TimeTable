@@ -1,19 +1,20 @@
 //
-//  TasksViewController.swift
+//  TeachersViewController.swift
 //  TimeTable
 //
-//  Created by Максим on 18.04.2022.
+//  Created by Максим on 28.04.2022.
 //
 
 import UIKit
 
-class TasksViewController: UIViewController {
+class TeachersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "Tasks"
+        title = "Teachers"
         
     }
 }
+

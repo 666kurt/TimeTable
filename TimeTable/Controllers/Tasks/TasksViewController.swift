@@ -1,5 +1,5 @@
 //
-//  TimeTableViewController.swift
+//  TasksViewController.swift
 //  TimeTable
 //
 //  Created by Максим on 18.04.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 
-class TimeTableViewController: UIViewController {
+class TasksViewController: UIViewController {
     
     var calendarHeightConstraint : NSLayoutConstraint!
     
@@ -26,21 +26,43 @@ class TimeTableViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    let tableView : UITableView = {
+        let tableView = UITableView()
+        tableView.bounces = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    let idTasksCell = "idTasksCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "TimeTable"
+        title = "Tasks"
         
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scope = .week
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TasksTableViewCell.self, forCellReuseIdentifier: idTasksCell)
+        
         setConstraints()
         swipeAction()
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddButtonTapped))
+        
+    }
+    
+    @objc func AddButtonTapped() {
+        
+        let tasksOption = TaskOptionTableView()
+        navigationController?.pushViewController(tasksOption, animated: true)
         
     }
     
@@ -87,9 +109,41 @@ class TimeTableViewController: UIViewController {
     
 }
 
+// MARK: UITableViewDelegate, UITableViewDataSourse
+
+extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) as! TasksTableViewCell
+        cell.cellTaskDelegate = self
+        cell.index = indexPath
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    
+}
+
+// MARK: PressReadyTaskButtonProtocol
+
+extension TasksViewController: PressReadyTaskButtonProtocol {
+    func readyButtonTapped(indexPath: IndexPath) {
+        print("tap")
+    }
+    
+    
+}
+
 // MARK: FSCalendarDataSource, FSCalendarDelegate
 
-extension TimeTableViewController: FSCalendarDataSource, FSCalendarDelegate {
+extension TasksViewController: FSCalendarDataSource, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendarHeightConstraint.constant = bounds.height
@@ -104,7 +158,7 @@ extension TimeTableViewController: FSCalendarDataSource, FSCalendarDelegate {
 
 // MARK: SetConstraints
 
-extension TimeTableViewController {
+extension TasksViewController {
     
     func setConstraints() {
         
@@ -126,6 +180,14 @@ extension TimeTableViewController {
             showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             showHideButton.heightAnchor.constraint(equalToConstant: 20),
             showHideButton.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
     
