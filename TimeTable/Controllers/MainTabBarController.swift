@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
         
         let timetableViewController = createNavController(vc: TimeTableViewController(), itemName: "TimeTable", itemImage: "calendar.badge.clock")
         let tasksViewController = createNavController(vc: TasksViewController(), itemName: "Tasks", itemImage: "text.badge.checkmark")
-        let contactsViewController = createNavController(vc: ContactsViewController(), itemName: "Contacts", itemImage: "rectangle.stack.person.crop")
+        let contactsViewController = createNavController(vc: ContactsTableViewController(), itemName: "Contacts", itemImage: "rectangle.stack.person.crop")
         
         viewControllers = [timetableViewController, tasksViewController, contactsViewController]
         

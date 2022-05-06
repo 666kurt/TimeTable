@@ -14,6 +14,11 @@ class OptionTimeTableViewController: UITableViewController {
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
 
+    let cellNameArray = [["Date", "Time"],
+                         ["Name", "Type", "Building", "Audience"],
+                         ["Teacher name"],
+                         [""],
+                         ["Repeate every 7 days"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +28,7 @@ class OptionTimeTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.9686, alpha: 1.0)
-        tableView.register(OptionsTimeTableViewCell.self, forCellReuseIdentifier: idOptionTimeTableCell)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionTimeTableCell)
         tableView.register(HeaderOptionsViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionTimeTableHeader)
         
         title = "Options TimeTable"
@@ -46,8 +51,8 @@ class OptionTimeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionTimeTableCell, for: indexPath) as! OptionsTimeTableViewCell
-        cell.cellConfigure(indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionTimeTableCell, for: indexPath) as! OptionsTableViewCell
+        cell.cellTimeTableConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }
     
@@ -67,7 +72,7 @@ class OptionTimeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsTimeTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
         switch indexPath {
             
