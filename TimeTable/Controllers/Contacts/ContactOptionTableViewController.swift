@@ -71,6 +71,9 @@ class ContactOptionTableViewController: UITableViewController {
        case 3: alertFriendOrTeacher(label: cell.nameCellLabel) { (type) in
            print(type)
        }
+       case 4: alertPhotoOrCamera { [self] source in
+           chooseImagePicker(sourse: source)
+       }
        default:
            print("Tap ContactTableView")
         }
@@ -80,6 +83,30 @@ class ContactOptionTableViewController: UITableViewController {
         let viewController = vc
         navigationController?.pushViewController(viewController, animated: true)
         navigationController?.navigationBar.topItem?.title = "Options"
+    }
+}
+
+extension ContactOptionTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func chooseImagePicker(sourse: UIImagePickerController.SourceType) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(sourse) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = sourse
+            present(imagePicker, animated: true)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let cell = tableView.cellForRow(at: [4, 0]) as! OptionsTableViewCell
+        
+        cell.backgroundViewCell.image = info[.editedImage] as? UIImage
+        cell.backgroundViewCell.contentMode = .scaleAspectFill
+        cell.backgroundViewCell.clipsToBounds = true
+        dismiss(animated: true)
     }
     
 }

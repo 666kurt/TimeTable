@@ -38,6 +38,7 @@
 		63AF5265282599770083B0FF /* ContactOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF5264282599770083B0FF /* ContactOptionTableViewController.swift */; };
 		63AF52672825A1ED0083B0FF /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */; };
 		63C2AD8C2811D0FC00FBD434 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2AD8B2811D0FC00FBD434 /* PressButtonProtocols.swift */; };
+		63D2495C2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		63AF5264282599770083B0FF /* ContactOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableViewController.swift; sourceTree = "<group>"; };
 		63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
 		63C2AD8B2811D0FC00FBD434 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
+		63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhotoOrCamera.swift; sourceTree = "<group>"; };
 		BE6F1CC59CC76CBA235EA672 /* Pods-TimeTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeTable.debug.xcconfig"; path = "Target Support Files/Pods-TimeTable/Pods-TimeTable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 		63033F562812F56E005F6252 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				63AF5264282599770083B0FF /* ContactOptionTableViewController.swift */,
 				63581F372821AF1C00735CEE /* ContactsTableViewController.swift */,
 				632AF2EF281AE2F8007A70AB /* TeachersViewController.swift */,
 			);
@@ -139,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				63581F392821B0FE00735CEE /* ContactsTableViewCell.swift */,
-				63AF5264282599770083B0FF /* ContactOptionTableViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 				632AF2E7281ADBA0007A70AB /* AlertTime.swift */,
 				632AF2E9281ADE4E007A70AB /* AlertForCellName.swift */,
 				63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */,
+				63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				632AF2E6281AC236007A70AB /* AlertDate.swift in Sources */,
 				630C066F280F05AE00A9EAB9 /* TimeTableViewCell.swift in Sources */,
 				63A91083280DA68500E398CC /* MainTabBarController.swift in Sources */,
+				63D2495C2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift in Sources */,
 				63A9107F280DA68500E398CC /* AppDelegate.swift in Sources */,
 				630C0675280F3CF500A9EAB9 /* UIStackView.swift in Sources */,
 				632AF2F0281AE2F8007A70AB /* TeachersViewController.swift in Sources */,
