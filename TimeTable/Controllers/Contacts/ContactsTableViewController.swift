@@ -27,15 +27,13 @@ class ContactsTableViewController: UITableViewController {
         
         title = "Contacts"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddButtonTapped))
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
-    @objc func AddButtonTapped() {
+    @objc func addButtonTapped() {
         
-        let contactOption = ContactOptionTableViewController()
+        let contactOption = ContactsOptionsTableViewController()
         navigationController?.pushViewController(contactOption, animated: true)
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +53,6 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tap")
     }
-    
 }
 
 

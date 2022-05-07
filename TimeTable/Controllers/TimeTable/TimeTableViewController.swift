@@ -12,7 +12,7 @@ class TimeTableViewController: UIViewController {
     
     var calendarHeightConstraint : NSLayoutConstraint!
     
-    private var calendar: FSCalendar = {
+    var calendar: FSCalendar = {
         let calendar = FSCalendar()
         calendar.translatesAutoresizingMaskIntoConstraints = false
         return calendar
@@ -55,15 +55,14 @@ class TimeTableViewController: UIViewController {
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         
         navigationController?.tabBarController?.tabBar.scrollEdgeAppearance = navigationController?.tabBarController?.tabBar.standardAppearance
-        
     }
     
-    @objc func AddButtonTapped() {
+    @objc func addButtonTapped() {
         
-        let timetableOption = OptionTimeTableViewController()
+        let timetableOption = TimeTableOptionsViewController()
         navigationController?.pushViewController(timetableOption, animated: true)
         
     }
@@ -105,9 +104,7 @@ class TimeTableViewController: UIViewController {
         default:
             break
         }
-        
     }
-    
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSourse
@@ -126,8 +123,6 @@ extension TimeTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
-    
 }
 
 // MARK: FSCalendarDataSource, FSCalendarDelegate
@@ -142,7 +137,6 @@ extension TimeTableViewController: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(date)
     }
-
 }
 
 // MARK: SetConstraints
@@ -177,7 +171,5 @@ extension TimeTableViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
-        
     }
-    
 }

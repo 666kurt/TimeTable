@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		051D7342B051C298194F834E /* Pods_TimeTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281A72BD75E0BF8AAAFE6D11 /* Pods_TimeTable.framework */; };
-		63033F542812F558005F6252 /* OptionTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63033F532812F558005F6252 /* OptionTimeTableViewController.swift */; };
+		63033F542812F558005F6252 /* TimeTableOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63033F532812F558005F6252 /* TimeTableOptionsViewController.swift */; };
 		63033F5B2812FC19005F6252 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63033F5A2812FC19005F6252 /* OptionsTableViewCell.swift */; };
 		63033F5D28130814005F6252 /* HeaderOptionsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63033F5C28130814005F6252 /* HeaderOptionsViewCell.swift */; };
 		630C066F280F05AE00A9EAB9 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C066E280F05AE00A9EAB9 /* TimeTableViewCell.swift */; };
@@ -16,17 +16,19 @@
 		632AF2E6281AC236007A70AB /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2E5281AC236007A70AB /* AlertDate.swift */; };
 		632AF2E8281ADBA0007A70AB /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2E7281ADBA0007A70AB /* AlertTime.swift */; };
 		632AF2EA281ADE4E007A70AB /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2E9281ADE4E007A70AB /* AlertForCellName.swift */; };
-		632AF2EC281AE257007A70AB /* TimeTableColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2EB281AE257007A70AB /* TimeTableColorViewController.swift */; };
+		632AF2EC281AE257007A70AB /* TimeTableColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2EB281AE257007A70AB /* TimeTableColorsViewController.swift */; };
 		632AF2F0281AE2F8007A70AB /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2EF281AE2F8007A70AB /* TeachersViewController.swift */; };
 		632AF2F2281AE63A007A70AB /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2F1281AE63A007A70AB /* UIAlertController.swift */; };
-		632AF2F4281B3209007A70AB /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2F3281B3209007A70AB /* ColorTableViewCell.swift */; };
-		6333040F281C1BC200A4975E /* TaskOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333040E281C1BC200A4975E /* TaskOptionTableView.swift */; };
-		63330413281C213C00A4975E /* ColorTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330412281C213C00A4975E /* ColorTaskTableViewController.swift */; };
+		632AF2F4281B3209007A70AB /* ColorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AF2F3281B3209007A70AB /* ColorsTableViewCell.swift */; };
+		6333040F281C1BC200A4975E /* TasksOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333040E281C1BC200A4975E /* TasksOptionsTableView.swift */; };
+		63330413281C213C00A4975E /* TasksColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330412281C213C00A4975E /* TasksColorsTableViewController.swift */; };
 		6340BFAF28105E46000ED16F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340BFAE28105E46000ED16F /* UILabel.swift */; };
 		6340BFB1281066DB000ED16F /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340BFB0281066DB000ED16F /* UIFont.swift */; };
 		6340BFB328109C15000ED16F /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340BFB228109C15000ED16F /* TasksTableViewCell.swift */; };
 		63581F382821AF1C00735CEE /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F372821AF1C00735CEE /* ContactsTableViewController.swift */; };
 		63581F3A2821B0FE00735CEE /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F392821B0FE00735CEE /* ContactsTableViewCell.swift */; };
+		639FFD722826C8EC0000EE95 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 639FFD712826C8EC0000EE95 /* Realm */; };
+		639FFD742826C8EC0000EE95 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 639FFD732826C8EC0000EE95 /* RealmSwift */; };
 		63A9107F280DA68500E398CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A9107E280DA68500E398CC /* AppDelegate.swift */; };
 		63A91081280DA68500E398CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A91080280DA68500E398CC /* SceneDelegate.swift */; };
 		63A91083280DA68500E398CC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A91082280DA68500E398CC /* MainTabBarController.swift */; };
@@ -35,16 +37,19 @@
 		63A9108B280DA68900E398CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A91089280DA68900E398CC /* LaunchScreen.storyboard */; };
 		63A91096280DAADE00E398CC /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A91095280DAADE00E398CC /* TimeTableViewController.swift */; };
 		63A91098280DAAFE00E398CC /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A91097280DAAFE00E398CC /* TasksViewController.swift */; };
-		63AF5265282599770083B0FF /* ContactOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF5264282599770083B0FF /* ContactOptionTableViewController.swift */; };
+		63AF5265282599770083B0FF /* ContactsOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF5264282599770083B0FF /* ContactsOptionsTableViewController.swift */; };
 		63AF52672825A1ED0083B0FF /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */; };
 		63C2AD8C2811D0FC00FBD434 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2AD8B2811D0FC00FBD434 /* PressButtonProtocols.swift */; };
 		63D2495C2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */; };
+		63D7C9C32826FA5900D1D845 /* TimeTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C9C22826FA5900D1D845 /* TimeTableModel.swift */; };
+		63D7C9C62826FCAB00D1D845 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C9C52826FCAB00D1D845 /* RealmManager.swift */; };
+		63D7C9C82827084100D1D845 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C9C72827084100D1D845 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		281A72BD75E0BF8AAAFE6D11 /* Pods_TimeTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F0A1BAC348D24CEACDA3F6 /* Pods-TimeTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeTable.release.xcconfig"; path = "Target Support Files/Pods-TimeTable/Pods-TimeTable.release.xcconfig"; sourceTree = "<group>"; };
-		63033F532812F558005F6252 /* OptionTimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTimeTableViewController.swift; sourceTree = "<group>"; };
+		63033F532812F558005F6252 /* TimeTableOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableOptionsViewController.swift; sourceTree = "<group>"; };
 		63033F5A2812FC19005F6252 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		63033F5C28130814005F6252 /* HeaderOptionsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsViewCell.swift; sourceTree = "<group>"; };
 		630C066E280F05AE00A9EAB9 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
@@ -52,12 +57,12 @@
 		632AF2E5281AC236007A70AB /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		632AF2E7281ADBA0007A70AB /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
 		632AF2E9281ADE4E007A70AB /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
-		632AF2EB281AE257007A70AB /* TimeTableColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableColorViewController.swift; sourceTree = "<group>"; };
+		632AF2EB281AE257007A70AB /* TimeTableColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableColorsViewController.swift; sourceTree = "<group>"; };
 		632AF2EF281AE2F8007A70AB /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		632AF2F1281AE63A007A70AB /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
-		632AF2F3281B3209007A70AB /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
-		6333040E281C1BC200A4975E /* TaskOptionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionTableView.swift; sourceTree = "<group>"; };
-		63330412281C213C00A4975E /* ColorTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTaskTableViewController.swift; sourceTree = "<group>"; };
+		632AF2F3281B3209007A70AB /* ColorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTableViewCell.swift; sourceTree = "<group>"; };
+		6333040E281C1BC200A4975E /* TasksOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksOptionsTableView.swift; sourceTree = "<group>"; };
+		63330412281C213C00A4975E /* TasksColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksColorsTableViewController.swift; sourceTree = "<group>"; };
 		6340BFAE28105E46000ED16F /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		6340BFB0281066DB000ED16F /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		6340BFB228109C15000ED16F /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,10 +78,13 @@
 		63A9108C280DA68900E398CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A91095280DAADE00E398CC /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		63A91097280DAAFE00E398CC /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		63AF5264282599770083B0FF /* ContactOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableViewController.swift; sourceTree = "<group>"; };
+		63AF5264282599770083B0FF /* ContactsOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsOptionsTableViewController.swift; sourceTree = "<group>"; };
 		63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
 		63C2AD8B2811D0FC00FBD434 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhotoOrCamera.swift; sourceTree = "<group>"; };
+		63D7C9C22826FA5900D1D845 /* TimeTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModel.swift; sourceTree = "<group>"; };
+		63D7C9C52826FCAB00D1D845 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		63D7C9C72827084100D1D845 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BE6F1CC59CC76CBA235EA672 /* Pods-TimeTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeTable.debug.xcconfig"; path = "Target Support Files/Pods-TimeTable/Pods-TimeTable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639FFD742826C8EC0000EE95 /* RealmSwift in Frameworks */,
+				639FFD722826C8EC0000EE95 /* Realm in Frameworks */,
 				051D7342B051C298194F834E /* Pods_TimeTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				63A91095280DAADE00E398CC /* TimeTableViewController.swift */,
-				63033F532812F558005F6252 /* OptionTimeTableViewController.swift */,
-				632AF2EB281AE257007A70AB /* TimeTableColorViewController.swift */,
+				63033F532812F558005F6252 /* TimeTableOptionsViewController.swift */,
+				632AF2EB281AE257007A70AB /* TimeTableColorsViewController.swift */,
 			);
 			path = TimeTable;
 			sourceTree = "<group>";
@@ -106,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				63A91097280DAAFE00E398CC /* TasksViewController.swift */,
-				6333040E281C1BC200A4975E /* TaskOptionTableView.swift */,
-				63330412281C213C00A4975E /* ColorTaskTableViewController.swift */,
+				6333040E281C1BC200A4975E /* TasksOptionsTableView.swift */,
+				63330412281C213C00A4975E /* TasksColorsTableViewController.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -115,7 +125,7 @@
 		63033F562812F56E005F6252 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				63AF5264282599770083B0FF /* ContactOptionTableViewController.swift */,
+				63AF5264282599770083B0FF /* ContactsOptionsTableViewController.swift */,
 				63581F372821AF1C00735CEE /* ContactsTableViewController.swift */,
 				632AF2EF281AE2F8007A70AB /* TeachersViewController.swift */,
 			);
@@ -149,6 +159,7 @@
 		630C066C280F055B00A9EAB9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63D7C9C12826FA4200D1D845 /* Realm */,
 				632AF2E4281AC221007A70AB /* Alert */,
 				630C066D280F056200A9EAB9 /* Cell */,
 			);
@@ -159,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				63033F5C28130814005F6252 /* HeaderOptionsViewCell.swift */,
-				632AF2F3281B3209007A70AB /* ColorTableViewCell.swift */,
+				632AF2F3281B3209007A70AB /* ColorsTableViewCell.swift */,
 				63033F5A2812FC19005F6252 /* OptionsTableViewCell.swift */,
 				63033F572812FBC9005F6252 /* TimeTable */,
 				63033F582812FBDC005F6252 /* Tasks */,
@@ -183,6 +194,7 @@
 				6340BFAE28105E46000ED16F /* UILabel.swift */,
 				6340BFB0281066DB000ED16F /* UIFont.swift */,
 				632AF2F1281AE63A007A70AB /* UIAlertController.swift */,
+				63D7C9C72827084100D1D845 /* UIColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -223,6 +235,7 @@
 				63A91092280DA6AA00E398CC /* Application */,
 				63A91093280DA6D700E398CC /* Controllers */,
 				630C066C280F055B00A9EAB9 /* Model */,
+				63D7C9C42826FC5200D1D845 /* Services */,
 				63A91094280DA6EC00E398CC /* Resourses */,
 				630C0672280F3CB400A9EAB9 /* Extensions */,
 				63C2AD882811D06F00FBD434 /* Protocols */,
@@ -269,6 +282,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		63D7C9C12826FA4200D1D845 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				63D7C9C22826FA5900D1D845 /* TimeTableModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		63D7C9C42826FC5200D1D845 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				63D7C9C52826FCAB00D1D845 /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		80A75A44BAC73F131B33D950 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +333,10 @@
 			dependencies = (
 			);
 			name = TimeTable;
+			packageProductDependencies = (
+				639FFD712826C8EC0000EE95 /* Realm */,
+				639FFD732826C8EC0000EE95 /* RealmSwift */,
+			);
 			productName = TimeTable;
 			productReference = 63A9107B280DA68500E398CC /* TimeTable.app */;
 			productType = "com.apple.product-type.application";
@@ -332,6 +365,9 @@
 				Base,
 			);
 			mainGroup = 63A91072280DA68500E398CC;
+			packageReferences = (
+				639FFD702826C8EC0000EE95 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 63A9107C280DA68500E398CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -412,22 +448,25 @@
 				6340BFAF28105E46000ED16F /* UILabel.swift in Sources */,
 				63033F5B2812FC19005F6252 /* OptionsTableViewCell.swift in Sources */,
 				63A91098280DAAFE00E398CC /* TasksViewController.swift in Sources */,
-				632AF2F4281B3209007A70AB /* ColorTableViewCell.swift in Sources */,
+				632AF2F4281B3209007A70AB /* ColorsTableViewCell.swift in Sources */,
 				63AF52672825A1ED0083B0FF /* AlertFriendOrTeacher.swift in Sources */,
-				63AF5265282599770083B0FF /* ContactOptionTableViewController.swift in Sources */,
+				63AF5265282599770083B0FF /* ContactsOptionsTableViewController.swift in Sources */,
 				632AF2F2281AE63A007A70AB /* UIAlertController.swift in Sources */,
 				63581F3A2821B0FE00735CEE /* ContactsTableViewCell.swift in Sources */,
-				632AF2EC281AE257007A70AB /* TimeTableColorViewController.swift in Sources */,
+				632AF2EC281AE257007A70AB /* TimeTableColorsViewController.swift in Sources */,
+				63D7C9C62826FCAB00D1D845 /* RealmManager.swift in Sources */,
 				632AF2E8281ADBA0007A70AB /* AlertTime.swift in Sources */,
 				63A91096280DAADE00E398CC /* TimeTableViewController.swift in Sources */,
-				63033F542812F558005F6252 /* OptionTimeTableViewController.swift in Sources */,
+				63033F542812F558005F6252 /* TimeTableOptionsViewController.swift in Sources */,
+				63D7C9C82827084100D1D845 /* UIColor.swift in Sources */,
 				63A91081280DA68500E398CC /* SceneDelegate.swift in Sources */,
 				63581F382821AF1C00735CEE /* ContactsTableViewController.swift in Sources */,
 				6340BFB1281066DB000ED16F /* UIFont.swift in Sources */,
 				6340BFB328109C15000ED16F /* TasksTableViewCell.swift in Sources */,
 				63C2AD8C2811D0FC00FBD434 /* PressButtonProtocols.swift in Sources */,
-				63330413281C213C00A4975E /* ColorTaskTableViewController.swift in Sources */,
-				6333040F281C1BC200A4975E /* TaskOptionTableView.swift in Sources */,
+				63330413281C213C00A4975E /* TasksColorsTableViewController.swift in Sources */,
+				63D7C9C32826FA5900D1D845 /* TimeTableModel.swift in Sources */,
+				6333040F281C1BC200A4975E /* TasksOptionsTableView.swift in Sources */,
 				63033F5D28130814005F6252 /* HeaderOptionsViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +687,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		639FFD702826C8EC0000EE95 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		639FFD712826C8EC0000EE95 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 639FFD702826C8EC0000EE95 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		639FFD732826C8EC0000EE95 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 639FFD702826C8EC0000EE95 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63A91073280DA68500E398CC /* Project object */;
 }

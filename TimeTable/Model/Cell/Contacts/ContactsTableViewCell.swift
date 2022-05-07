@@ -47,8 +47,7 @@ class ContactsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setConstraints()
-        self.selectionStyle = .none
-        
+        self.selectionStyle = .none        
     }
     
     required init?(coder: NSCoder) {

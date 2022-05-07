@@ -18,7 +18,6 @@ class HeaderOptionsViewCell: UITableViewHeaderFooterView {
         self.contentView.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.9686, alpha: 1.0)
         
         setConstraints()
-            
     }
     
     required init?(coder: NSCoder) {
@@ -35,8 +34,6 @@ class HeaderOptionsViewCell: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate([
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
             headerLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
-        ])
-        
+        ])        
     }
-        
 }

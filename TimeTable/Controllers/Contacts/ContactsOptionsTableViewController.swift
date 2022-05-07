@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactOptionTableViewController: UITableViewController {
+class ContactsOptionsTableViewController: UITableViewController {
     
     let idOptionContactCell = "idOptionContactCell"
     let idOptionContactHeader = "idOptionContactHeader"
@@ -65,9 +65,15 @@ class ContactOptionTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
        switch indexPath.section {
-       case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact")
-       case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact")
-       case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter main contact")
+       case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact") { text in
+           print(text)
+       }
+       case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact") { text in
+           print(text)
+       }
+       case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter main contact") { text in
+           print(text)
+       }
        case 3: alertFriendOrTeacher(label: cell.nameCellLabel) { (type) in
            print(type)
        }
@@ -86,7 +92,7 @@ class ContactOptionTableViewController: UITableViewController {
     }
 }
 
-extension ContactOptionTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ContactsOptionsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(sourse: UIImagePickerController.SourceType) {
         
@@ -108,5 +114,4 @@ extension ContactOptionTableViewController: UIImagePickerControllerDelegate, UIN
         cell.backgroundViewCell.clipsToBounds = true
         dismiss(animated: true)
     }
-    
 }

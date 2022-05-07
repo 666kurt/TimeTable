@@ -25,7 +25,6 @@ class TimeTableViewCell: UITableViewCell{
         
             setConstraints()
             self.selectionStyle = .none
-            
     }
     
     required init?(coder: NSCoder) {
@@ -61,6 +60,5 @@ class TimeTableViewCell: UITableViewCell{
             bottomStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
             bottomStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
-        
    }
 }

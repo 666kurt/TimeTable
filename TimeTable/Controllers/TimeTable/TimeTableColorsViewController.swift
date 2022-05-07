@@ -1,16 +1,16 @@
 //
-//  ColorTaskTableViewController.swift
+//  TimeTableColorViewController.swift
 //  TimeTable
 //
-//  Created by Максим on 29.04.2022.
+//  Created by Максим on 28.04.2022.
 //
 
 import UIKit
 
-class ColorTaskTableViewController: UITableViewController {
+class TimeTableColorsViewController: UITableViewController {
     
-    let idTaskColorCell = "idTaskColorCell"
-    let idTaskTimeTableHeader = "idTaskTimeTableHeader"
+    let idOptionColorCell = "idOptionColorCell"
+    let idOptionTimeTableHeader = "idOptionTimeTableHeader"
     
     let headerNameArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
 
@@ -23,10 +23,10 @@ class ColorTaskTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.9686, alpha: 1.0)
-        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idTaskColorCell)
-        tableView.register(HeaderOptionsViewCell.self, forHeaderFooterViewReuseIdentifier: idTaskTimeTableHeader)
+        tableView.register(ColorsTableViewCell.self, forCellReuseIdentifier: idOptionColorCell)
+        tableView.register(HeaderOptionsViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionTimeTableHeader)
         
-        title = "Color Tasks"
+        title = "Colors TimeTable"
         
     }
     
@@ -39,7 +39,7 @@ class ColorTaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idTaskColorCell, for: indexPath) as! ColorTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionColorCell, for: indexPath) as! ColorsTableViewCell
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }
@@ -49,7 +49,7 @@ class ColorTaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idTaskTimeTableHeader) as! HeaderOptionsViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionTimeTableHeader) as! HeaderOptionsViewCell
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }
@@ -60,7 +60,6 @@ class ColorTaskTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tap")
-    }
+    }    
 }
-
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OptionTimeTableViewController: UITableViewController {
+class TimeTableOptionsViewController: UITableViewController {
     
     let idOptionTimeTableCell = "idOptionTimeTableCell"
     let idOptionTimeTableHeader = "idOptionTimeTableHeader"
@@ -19,6 +19,8 @@ class OptionTimeTableViewController: UITableViewController {
                          ["Teacher name"],
                          [""],
                          ["Repeate every 7 days"]]
+    
+    let timeTableModel = TimeTableModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,11 @@ class OptionTimeTableViewController: UITableViewController {
         
         title = "Options TimeTable"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+    }
+    
+    @objc func saveButtonTapped() {
+        RealmManager.shared.saveTimeTableModel(model: timeTableModel)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,6 +60,7 @@ class OptionTimeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionTimeTableCell, for: indexPath) as! OptionsTableViewCell
         cell.cellTimeTableConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        cell.switchRepeatDelegate = self
         return cell
     }
     
@@ -75,21 +83,33 @@ class OptionTimeTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
         switch indexPath {
-            
-        case [0, 0]: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
+        case [0, 0]:
+            alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+                self.timeTableModel.timeTableDate = date
+                self.timeTableModel.timeTableWeekday = numberWeekday
         }
-        case [0, 1]: alertTime(label: cell.nameCellLabel) { (date) in
-            print(date)
+        case [0, 1]:
+            alertTime(label: cell.nameCellLabel) { (time) in
+                self.timeTableModel.timeTableTime = time
         }
-            
-        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
-        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
-        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Number of building", placeholder: "Enter number of building")
-        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Number of audience", placeholder: "Enter number of audience")
-            
+        case [1, 0]:
+            alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson") { text in
+                self.timeTableModel.timeTableName = text
+        }
+        case [1, 1]:
+            alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson") { text in
+                self.timeTableModel.timeTableType = text
+        }
+        case [1, 2]:
+            alertForCellName(label: cell.nameCellLabel, name: "Number of building", placeholder: "Enter number of building") { text in
+                self.timeTableModel.timeTableBuilding = text
+        }
+        case [1, 3]:
+            alertForCellName(label: cell.nameCellLabel, name: "Number of audience", placeholder: "Enter number of audience") { text in
+                self.timeTableModel.timeTableAudience = text
+        }
         case [2, 0]: pushControllers(vc: TeachersViewController())
-        case [3, 0]: pushControllers(vc: TimeTableColorViewController())
+        case [3, 0]: pushControllers(vc: TimeTableColorsViewController())
         default:
             print("error")
         }
@@ -100,5 +120,10 @@ class OptionTimeTableViewController: UITableViewController {
         navigationController?.pushViewController(viewController, animated: true)
         navigationController?.navigationBar.topItem?.title = "Options"
     }
-    
+}
+
+extension TimeTableOptionsViewController: SwitchRepeatProtocol {
+    func switchRepeat(value: Bool) {
+        timeTableModel.timeTableRepeat = value
+    }
 }

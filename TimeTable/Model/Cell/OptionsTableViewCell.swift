@@ -33,6 +33,8 @@ class OptionsTableViewCell: UITableViewCell {
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()
+    
+    weak var switchRepeatDelegate: SwitchRepeatProtocol?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,7 +45,6 @@ class OptionsTableViewCell: UITableViewCell {
             self.backgroundColor = .clear
             
         repeatSwitch.addTarget(self, action: #selector(switchChange(paramTarger:)), for: .valueChanged)
-            
     }
     
     required init?(coder: NSCoder) {
@@ -74,15 +75,10 @@ class OptionsTableViewCell: UITableViewCell {
         nameCellLabel.text = nameArray[indexPath.section]
         
         indexPath.section == 4 ? backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus") : nil
-        
     }
     
     @objc func switchChange(paramTarger: UISwitch) {
-        if paramTarger.isOn {
-            print("on")
-        } else {
-            print("off")
-        }
+        switchRepeatDelegate?.switchRepeat(value: paramTarger.isOn)
     }
     
     func setConstraints() {
@@ -106,8 +102,6 @@ class OptionsTableViewCell: UITableViewCell {
             repeatSwitch.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             repeatSwitch.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -15)
         ])
-
     }
-        
 }
 

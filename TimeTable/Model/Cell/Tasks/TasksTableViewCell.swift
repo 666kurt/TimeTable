@@ -70,7 +70,6 @@ class TasksTableViewCell: UITableViewCell{
             taskDescription.trailingAnchor.constraint(equalTo: readyButton.leadingAnchor, constant: -5),
             taskDescription.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
         ])
-
    }
 }
 

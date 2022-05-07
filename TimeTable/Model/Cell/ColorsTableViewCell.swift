@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorTableViewCell: UITableViewCell {
+class ColorsTableViewCell: UITableViewCell {
     
     let backgroundViewCell: UIView = {
         let view = UIView()
@@ -24,7 +24,6 @@ class ColorTableViewCell: UITableViewCell {
         
             self.selectionStyle = .none
             self.backgroundColor = .clear
-            
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +42,6 @@ class ColorTableViewCell: UITableViewCell {
         default:
             backgroundViewCell.backgroundColor = .purple
         }
-
     }
 
     func setConstraints() {
@@ -55,7 +53,6 @@ class ColorTableViewCell: UITableViewCell {
             backgroundViewCell.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             backgroundViewCell.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1)
         ])
-        
     }
 }
 
