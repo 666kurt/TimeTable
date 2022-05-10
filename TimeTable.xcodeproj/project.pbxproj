@@ -25,6 +25,7 @@
 		6340BFAF28105E46000ED16F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340BFAE28105E46000ED16F /* UILabel.swift */; };
 		6340BFB1281066DB000ED16F /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340BFB0281066DB000ED16F /* UIFont.swift */; };
 		6340BFB328109C15000ED16F /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340BFB228109C15000ED16F /* TasksTableViewCell.swift */; };
+		63560B82282A8A36009F7B3C /* AlertSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63560B81282A8A36009F7B3C /* AlertSave.swift */; };
 		63581F382821AF1C00735CEE /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F372821AF1C00735CEE /* ContactsTableViewController.swift */; };
 		63581F3A2821B0FE00735CEE /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F392821B0FE00735CEE /* ContactsTableViewCell.swift */; };
 		639FFD722826C8EC0000EE95 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 639FFD712826C8EC0000EE95 /* Realm */; };
@@ -66,6 +67,7 @@
 		6340BFAE28105E46000ED16F /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		6340BFB0281066DB000ED16F /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		6340BFB228109C15000ED16F /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		63560B81282A8A36009F7B3C /* AlertSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSave.swift; sourceTree = "<group>"; };
 		63581F372821AF1C00735CEE /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		63581F392821B0FE00735CEE /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		63A9107B280DA68500E398CC /* TimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 				632AF2E9281ADE4E007A70AB /* AlertForCellName.swift */,
 				63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */,
 				63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */,
+				63560B81282A8A36009F7B3C /* AlertSave.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				632AF2F2281AE63A007A70AB /* UIAlertController.swift in Sources */,
 				63581F3A2821B0FE00735CEE /* ContactsTableViewCell.swift in Sources */,
 				632AF2EC281AE257007A70AB /* TimeTableColorsViewController.swift in Sources */,
+				63560B82282A8A36009F7B3C /* AlertSave.swift in Sources */,
 				63D7C9C62826FCAB00D1D845 /* RealmManager.swift in Sources */,
 				632AF2E8281ADBA0007A70AB /* AlertTime.swift in Sources */,
 				63A91096280DAADE00E398CC /* TimeTableViewController.swift in Sources */,

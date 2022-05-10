@@ -9,15 +9,15 @@ import UIKit
 
 class TimeTableViewCell: UITableViewCell{
     
-    let lessonName = UILabel(text: "Программирование", font: .avenirNextDemiBold20())
-    let teacherName = UILabel(text: "Шишлов Максим Сергеевич", font: .avenirNext20(), alignment: .right)
-    let lessonTime = UILabel(text: "08:00", font: .avenirNextDemiBold20())
+    let lessonName = UILabel(text: "", font: .avenirNextDemiBold20())
+    let teacherName = UILabel(text: "", font: .avenirNext20(), alignment: .right)
+    let lessonTime = UILabel(text: "", font: .avenirNextDemiBold20())
     let typeLabel = UILabel(text: "Тип:", font: .avenirNext14(), alignment: .right)
-    let lessonType = UILabel(text: "Лекция", font: .avenirNextDemiBold14())
+    let lessonType = UILabel(text: "", font: .avenirNextDemiBold14())
     let buildingLabel = UILabel(text: "Корпус", font: .avenirNext14(), alignment: .right)
-    let lessonBuilding = UILabel(text: "1", font: .avenirNextDemiBold14())
+    let lessonBuilding = UILabel(text: "", font: .avenirNextDemiBold14())
     let audLabel = UILabel(text: "Аудитория:", font: .avenirNext14(), alignment: .right)
-    let lessonAud = UILabel(text: "432", font: .avenirNextDemiBold14())
+    let lessonAud = UILabel(text: "", font: .avenirNextDemiBold14())
 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,6 +29,21 @@ class TimeTableViewCell: UITableViewCell{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(model: TimeTableModel) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        lessonName.text = model.timeTableName
+        teacherName.text = model.timeTableTeacher
+        lessonTime.text = dateFormatter.string(from: model.timeTableTime)
+        lessonType.text = model.timeTableType
+        lessonBuilding.text = model.timeTableBuilding
+        lessonAud.text = model.timeTableAudience
+        backgroundColor = UIColor().colorFromHex("\(model.timeTableColor)")
+        
     }
     
     func setConstraints() {

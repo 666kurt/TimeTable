@@ -7,9 +7,11 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class TimeTableViewController: UIViewController {
     
+    let idTimeCell = "idTimeCell"
     var calendarHeightConstraint : NSLayoutConstraint!
     
     var calendar: FSCalendar = {
@@ -34,14 +36,15 @@ class TimeTableViewController: UIViewController {
         return tableView
     }()
     
-    let idTimeCell = "idTimeCell"
-
+    let localRealm = try! Realm()
+    var timeTableArray: Results<TimeTableModel>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         title = "TimeTable"
-        
+            
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scope = .week
@@ -52,6 +55,7 @@ class TimeTableViewController: UIViewController {
         
         setConstraints()
         swipeAction()
+        timeTableOnDay(date: Date())
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         
@@ -105,6 +109,27 @@ class TimeTableViewController: UIViewController {
             break
         }
     }
+    
+    private func timeTableOnDay(date: Date) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else { return }
+        
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second: -1)
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
+        let predicateRepeat = NSPredicate(format: "timeTableWeekday = \(weekday) AND timeTableRepeat = true")
+        let predicateUnrepeat = NSPredicate(format: "timeTableRepeat = true AND timeTableDate BETWEEN %@", [dateStart, dateEnd])
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
+        
+        timeTableArray = localRealm.objects(TimeTableModel.self).filter(compound).sorted(byKeyPath: "timeTableTime")
+        
+        tableView.reloadData()
+    }
+    
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSourse
@@ -112,11 +137,13 @@ class TimeTableViewController: UIViewController {
 extension TimeTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return timeTableArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idTimeCell, for: indexPath) as! TimeTableViewCell
+        let model = timeTableArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     
@@ -135,7 +162,7 @@ extension TimeTableViewController: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        timeTableOnDay(date: date)
     }
 }
 

@@ -20,7 +20,9 @@ class TimeTableOptionsViewController: UITableViewController {
                          [""],
                          ["Repeate every 7 days"]]
     
-    let timeTableModel = TimeTableModel()
+    private var timeTableModel = TimeTableModel()
+    
+    var hexColorCell = "1A4766"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,12 @@ class TimeTableOptionsViewController: UITableViewController {
     }
     
     @objc func saveButtonTapped() {
+        timeTableModel.timeTableColor = hexColorCell
         RealmManager.shared.saveTimeTableModel(model: timeTableModel)
+        timeTableModel = TimeTableModel()
+        alertSave(title: "Success")
+        hexColorCell = "1A4766"
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,7 +66,7 @@ class TimeTableOptionsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionTimeTableCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellTimeTableConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        cell.cellTimeTableConfigure(nameArray: cellNameArray, indexPath: indexPath, hexColor: hexColorCell)
         cell.switchRepeatDelegate = self
         return cell
     }
