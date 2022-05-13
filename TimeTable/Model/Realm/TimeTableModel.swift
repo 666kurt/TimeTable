@@ -10,8 +10,8 @@ import Foundation
 
 class TimeTableModel: Object {
     
-    @Persisted var timeTableDate = Date()
-    @Persisted var timeTableTime = Date()
+    @Persisted var timeTableDate: Date?
+    @Persisted var timeTableTime: Date?
     @Persisted var timeTableName: String = "Unknown"
     @Persisted var timeTableType: String = "Unknown"
     @Persisted var timeTableBuilding: String = "Unknown"

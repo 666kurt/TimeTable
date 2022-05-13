@@ -30,6 +30,13 @@ class TasksColorsTableViewController: UITableViewController {
         
     }
     
+    private func setColor(color: String) {
+        let timeTableOptions = self.navigationController?.viewControllers[1] as? TasksOptionsTableView
+        timeTableOptions?.hexColorCell = color
+        timeTableOptions?.tableView.reloadRows(at: [[3, 0]], with: .none)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 7
     }

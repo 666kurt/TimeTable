@@ -41,12 +41,17 @@ class TimeTableOptionsViewController: UITableViewController {
     }
     
     @objc func saveButtonTapped() {
-        timeTableModel.timeTableColor = hexColorCell
-        RealmManager.shared.saveTimeTableModel(model: timeTableModel)
-        timeTableModel = TimeTableModel()
-        alertSave(title: "Success")
-        hexColorCell = "1A4766"
-        tableView.reloadData()
+        
+        if timeTableModel.timeTableDate == nil || timeTableModel.timeTableTime == nil || timeTableModel.timeTableName == "Unknown" {
+            alertSave(title: "Error", message: "Requered fileds: DATE, TIME, NAME")
+        } else {
+            timeTableModel.timeTableColor = hexColorCell
+            RealmManager.shared.saveTimeTableModel(model: timeTableModel)
+            timeTableModel = TimeTableModel()
+            alertSave(title: "Success", message: nil)
+            hexColorCell = "1A4766"
+            tableView.reloadData()
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

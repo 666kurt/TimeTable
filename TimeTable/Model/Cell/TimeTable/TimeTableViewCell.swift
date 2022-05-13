@@ -38,7 +38,8 @@ class TimeTableViewCell: UITableViewCell{
         
         lessonName.text = model.timeTableName
         teacherName.text = model.timeTableTeacher
-        lessonTime.text = dateFormatter.string(from: model.timeTableTime)
+        guard let time = model.timeTableTime else { return }
+        lessonTime.text = dateFormatter.string(from: time)
         lessonType.text = model.timeTableType
         lessonBuilding.text = model.timeTableBuilding
         lessonAud.text = model.timeTableAudience

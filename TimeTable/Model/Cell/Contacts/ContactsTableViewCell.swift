@@ -11,7 +11,7 @@ class ContactsTableViewCell: UITableViewCell {
     
     let contactImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "image")
+        imageView.image = UIImage(systemName: "person.fill")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,9 +32,9 @@ class ContactsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    let nameLabel = UILabel(text: "Toli Wild", font: .avenirNext20())
-    let phoneLabel = UILabel(text: "+7 995 335 94 93", font: .avenirNext14())
-    let mailLabel = UILabel(text: "toliwild@gmail.com", font: .avenirNext14())
+    let nameLabel = UILabel(text: "Unknown", font: .avenirNext20())
+    let phoneLabel = UILabel(text: "Unknown", font: .avenirNext14())
+    let mailLabel = UILabel(text: "Unknown", font: .avenirNext14())
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -52,6 +52,17 @@ class ContactsTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(model: ContactModel) {
+        
+        nameLabel.text = model.contactsName
+        phoneLabel.text = model.contactsPhone
+        mailLabel.text = model.contactsMail
+        
+        guard let data = model.contactsImage, let image = UIImage(data: data) else { return }
+        contactImageView.image = image
+        
     }
     
     func setConstraints() {

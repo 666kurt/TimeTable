@@ -40,6 +40,8 @@
 		63A91098280DAAFE00E398CC /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A91097280DAAFE00E398CC /* TasksViewController.swift */; };
 		63AF5265282599770083B0FF /* ContactsOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF5264282599770083B0FF /* ContactsOptionsTableViewController.swift */; };
 		63AF52672825A1ED0083B0FF /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */; };
+		63AF834F282D92FD00CA7BCC /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF834E282D92FD00CA7BCC /* TaskModel.swift */; };
+		63AF8351282DA7AF00CA7BCC /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF8350282DA7AF00CA7BCC /* ContactModel.swift */; };
 		63C2AD8C2811D0FC00FBD434 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2AD8B2811D0FC00FBD434 /* PressButtonProtocols.swift */; };
 		63D2495C2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */; };
 		63D7C9C32826FA5900D1D845 /* TimeTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C9C22826FA5900D1D845 /* TimeTableModel.swift */; };
@@ -82,6 +84,8 @@
 		63A91097280DAAFE00E398CC /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		63AF5264282599770083B0FF /* ContactsOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsOptionsTableViewController.swift; sourceTree = "<group>"; };
 		63AF52662825A1ED0083B0FF /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
+		63AF834E282D92FD00CA7BCC /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		63AF8350282DA7AF00CA7BCC /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		63C2AD8B2811D0FC00FBD434 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		63D2495B2826A5D300B5B2A9 /* AlertPhotoOrCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhotoOrCamera.swift; sourceTree = "<group>"; };
 		63D7C9C22826FA5900D1D845 /* TimeTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableModel.swift; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				63D7C9C22826FA5900D1D845 /* TimeTableModel.swift */,
+				63AF834E282D92FD00CA7BCC /* TaskModel.swift */,
+				63AF8350282DA7AF00CA7BCC /* ContactModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				632AF2E8281ADBA0007A70AB /* AlertTime.swift in Sources */,
 				63A91096280DAADE00E398CC /* TimeTableViewController.swift in Sources */,
 				63033F542812F558005F6252 /* TimeTableOptionsViewController.swift in Sources */,
+				63AF8351282DA7AF00CA7BCC /* ContactModel.swift in Sources */,
 				63D7C9C82827084100D1D845 /* UIColor.swift in Sources */,
 				63A91081280DA68500E398CC /* SceneDelegate.swift in Sources */,
 				63581F382821AF1C00735CEE /* ContactsTableViewController.swift in Sources */,
@@ -472,6 +479,7 @@
 				63D7C9C32826FA5900D1D845 /* TimeTableModel.swift in Sources */,
 				6333040F281C1BC200A4975E /* TasksOptionsTableView.swift in Sources */,
 				63033F5D28130814005F6252 /* HeaderOptionsViewCell.swift in Sources */,
+				63AF834F282D92FD00CA7BCC /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
